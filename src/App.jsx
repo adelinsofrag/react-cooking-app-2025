@@ -1,12 +1,17 @@
+import { BrowserRouter, Route, Routes } from "react-router";
 import { HomePage } from "./components/pages/HomePage";
-import TopNavContainer from "./components/containers/TopNavContainer";
+import { MealPage } from "./components/pages/MealPage";
+import { FavoritesPage } from "./components/pages/FavoritesPage";
 
 function App() {
   return (
-    <>
-      <TopNavContainer />
-      <HomePage />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/meal/:mealId" element={<MealPage />} />
+        <Route path="/favorites" element={<FavoritesPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
